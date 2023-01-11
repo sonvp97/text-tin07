@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View branch</title>
+</head>
+<body>
+<h1>View province: <span th:text="${branch.name}"></span></h1>
+<a href="/branches">Province list</a>
+<table border="1" class="table table-striped">
+    <tr>
+        <th class="table-info">First name</th>
+        <th class="table-info">Last name</th>
+    </tr>
+    <th:block th:each="branch : ${branches}">
+        <tr>
+            <td class="table-info" th:text="${branch.firstName}"></td>
+            <td class="table-info" th:text="${branch.lastName}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
